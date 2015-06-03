@@ -1,0 +1,20 @@
+{
+  "name": "angular-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/patrmiller/angular-app",
+  "authors": [
+    "Patrick Miller <patrick.miller@uptake.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0",
+    "bootstrap": "~3.3.4"
+  }
+}
