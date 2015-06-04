@@ -1,0 +1,42 @@
+body {
+	background-color: #1E242B;
+}
+
+div.emblem-container {
+	margin-bottom: 10px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+div.emblem-background {
+	width: 474px;
+	height: 96px;
+}
+
+div.player-class,
+div.player-race,
+div.level {
+	color: white;
+	text-transform: capitalize;
+	font-size: 28px;
+	position: absolute;
+	top: 20px;
+	left: 105px;
+}
+
+div.player-race {
+	font-size: 18px;
+	top: 65;
+}
+
+div.level {
+	color: #F5DC56;
+	font-size: 40px;
+	left: 375px;
+}
+
+div.level:before {
+	content: "\2726";
+  	display: inline-block;
+}
