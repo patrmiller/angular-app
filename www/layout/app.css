@@ -1,5 +1,19 @@
 body {
 	background-color: #1E242B;
+	width: 960px;
+	margin: 0 auto;
+	border: 1px solid;
+}
+
+header {
+	background-image: url("http://2.bp.blogspot.com/-uETxLlTpKlY/UUUYf4hHFeI/AAAAAAAANkQ/nJU9BMK8KTk/s1600/destiny-header-logo.jpg");
+	background-repeat: no-repeat;
+	width: 960px;
+	height: 165px;
+}
+
+button.search-button {
+	margin: 10 0;
 }
 
 div.emblem-container {

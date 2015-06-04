@@ -1,6 +1,6 @@
 angular.module("DataService", [])
 
-.factory("DataService", function($http) {
+.service("DataService", function($http) {
 	var that = this;
 	
 	var characters = [];
@@ -10,18 +10,16 @@ angular.module("DataService", [])
 
 	function getDataForUser(userId) {
 		var url = 'http://www.bungie.net/Platform/Destiny/SearchDestinyPlayer/TigerPSN/';
-		$http.get(url + userId)
-		.success(getPlayerData);
-	}
+		var memberPromise = $http.get(url + userId);
 
-	function getPlayerData(data, status, headers, config) {
-		var memberId = data.Response[0].membershipId;
-		var url = 'http://www.bungie.net/Platform/Destiny/TigerPSN/Account/';
-		$http.get(url + memberId)
-		.success(function(data, status, headers, config) {
-			that.characters = data.Response.data.characters;
+		var playerPromise = memberPromise.then(function(response) {
+			var memberId = response.data.Response[0].membershipId;
+			var url = 'http://www.bungie.net/Platform/Destiny/TigerPSN/Account/';
+			return $http.get(url + memberId); 
 		});
+		 
+	 	return playerPromise;
 	}
-
+	
 	return that;
 });

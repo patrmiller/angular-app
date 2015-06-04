@@ -1,22 +1,28 @@
 <div>
 	<input type="text" ng-model="pc.userId" />
-	<button ng-click="pc.getDataForUser()">Get Player Data</button>
+	<button class="search-button" ng-click="pc.getDataForUser()">Get Player Data</button>
 </div>
-<div class="emblem-container" ng-repeat="character in pc.characters">
-	<div class="emblem-background" ng-style="{ 'background-image': 'url(' + pc.getImageURL(character.backgroundPath) + ')' }">
-		<img ng-src="{{ pc.getImageURL(character.emblemPath) }}" />
-		<div class="player-class">
-			{{ pc.getHashValue(character.characterBase.classHash) }}
+<div ng-repeat="character in pc.characters">
+	<a ng-href="#/details/{{character}}">
+		<div class="emblem-container">
+			<div class="emblem-background" 
+			 ng-style="{ 'background-image': 'url(' + pc.getImageURL(character.backgroundPath) + ')' }"
+			 ng-click="pc.goToDetail(character)">
+				<img ng-src="{{ pc.getImageURL(character.emblemPath) }}" />
+				<div class="player-class">
+					{{ pc.getHashValue(character.characterBase.classHash) }}
+				</div>
+				<div class="player-race">
+					{{ 
+						pc.getHashValue(character.characterBase.raceHash) + 
+						" " + 
+						pc.getHashValue(character.characterBase.genderHash)
+					}}
+				</div>
+				<div class="level">
+					{{  character.characterLevel }}
+				</div>
+			</div>
 		</div>
-		<div class="player-race">
-			{{ 
-				pc.getHashValue(character.characterBase.raceHash) + 
-				" " + 
-				pc.getHashValue(character.characterBase.genderHash)
-			}}
-		</div>
-		<div class="level">
-			{{  character.characterLevel }}
-		</div>
-	</div>
+	</a>
 </div>

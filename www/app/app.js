@@ -1,4 +1,4 @@
-angular.module("app", ["ngRoute", "DestinyPlayerStats"])
+angular.module("app", ["ngRoute", "DestinyPlayerStats", "DestinyPlayerDetails"])
 
 .config(function($routeProvider) {
 	$routeProvider.when('/search', {
@@ -6,10 +6,10 @@ angular.module("app", ["ngRoute", "DestinyPlayerStats"])
 		controller: "PlayerController",
 		controllerAs: "pc"
 	})
-	.when('/details', {
-		templateUrl: "layout/views/detail.html" //,
-		//controller:,
-		//controllerAs
+	.when('/details:character', {
+		templateUrl: "layout/views/detail.html",
+		controller: "DetailController",
+		controllerAs: "dc"
 	})
 	.otherwise("/search");
 });
