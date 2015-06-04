@@ -16,6 +16,10 @@
   "dependencies": {
     "angular": "~1.4.0",
     "bootstrap": "~3.3.4",
-    "angular-mocks": "~1.4.0"
+    "angular-mocks": "~1.4.0",
+    "angular-routing": "~0.1.2"
+  },
+  "resolutions": {
+    "angular": "1.4.0"
   }
 }

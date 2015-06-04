@@ -1,33 +1,15 @@
-<html ng-app="app.destinyPlayerStats">
+<html ng-app="app">
 	<head>
 		<title>Angular App</title>	
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="layout/app.css">
 	</head>
-	<body ng-controller="DestinyPlayerController as dpc">
-		<div>
-			<input type="text" ng-model="dpc.userId" />
-			<button ng-click="dpc.getDataForUser()">Get Player Data</button>
-		</div>
-		<div class="emblem-container" ng-repeat="character in dpc.characters">
-			<div class="emblem-background" ng-style="{ 'background-image': 'url(' + dpc.getImageURL(character.backgroundPath) + ')' }">
-				<img ng-src="{{ dpc.getImageURL(character.emblemPath) }}" />
-				<div class="player-class">
-					{{ dpc.getHashValue(character.characterBase.classHash) }}
-				</div>
-				<div class="player-race">
-					{{ 
-						dpc.getHashValue(character.characterBase.raceHash) + 
-						" " + 
-						dpc.getHashValue(character.characterBase.genderHash)
-					}}
-				</div>
-				<div class="level">
-					{{  character.characterLevel }}
-				</div>
-			</div>
-		</div>
+	<body >
+		<div ng-view></div>
 		<script src="lib/angular/angular.js"></script>
-		<script src="app/destinyPlayerStats.js"></script>
+		<script src="lib/angular-route/angular-route.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/playerStats.js"></script>
+		<script src="app/dataService.js"></script>
 	</body>
 </html>
