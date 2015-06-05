@@ -6,10 +6,12 @@ angular.module("app", ["ngRoute", "DestinyPlayerStats", "DestinyPlayerDetails"])
 		controller: "PlayerController",
 		controllerAs: "pc"
 	})
-	.when('/details:character', {
+	.when('/details/', {
 		templateUrl: "layout/views/detail.html",
 		controller: "DetailController",
 		controllerAs: "dc"
 	})
-	.otherwise("/search");
+	.otherwise({
+		redirectTo: "/search"
+	});
 });

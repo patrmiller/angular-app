@@ -1,19 +1,33 @@
 body {
 	background-color: #1E242B;
-	width: 960px;
+	width: 1024px;
 	margin: 0 auto;
-	border: 1px solid;
 }
 
-header {
-	background-image: url("http://2.bp.blogspot.com/-uETxLlTpKlY/UUUYf4hHFeI/AAAAAAAANkQ/nJU9BMK8KTk/s1600/destiny-header-logo.jpg");
+div.view-container {
+	background-image: url(../resources/images/hunter.jpg);
+	background-size: 100%;
+	height: 100%;
 	background-repeat: no-repeat;
-	width: 960px;
-	height: 165px;
+	margin-top: 100px;
+}
+
+input.search-box {
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 button.search-button {
 	margin: 10 0;
+}
+
+div.content-container {
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 53%;
+	padding: 18px;
+	position: relative;
+	top: 6%;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 div.emblem-container {
@@ -53,4 +67,24 @@ div.level {
 div.level:before {
 	content: "\2726";
   	display: inline-block;
+}
+
+div.detail-container {
+	color: white;
+	margin-top: 2%;
+	padding: 30px;
+}
+
+div.detail-container div.detail h1 {
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
+
+div.detail-container div.detail h3 {
+	font-size: 14px;
+	letter-spacing: 0.5em;
+	font-weight: lighter;
+	width: 32%;
+	margin: 0;
+	padding: 0;
 }

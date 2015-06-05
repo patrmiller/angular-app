@@ -1,7 +1,7 @@
 angular.module("DestinyPlayerStats", ["DataService", "HashService"])
 
-.controller("PlayerController", ["$scope", "DataService", "HashService", "$location",
-	function($scope, DataService, HashService, $location) {
+.controller("PlayerController", ["DataService", "HashService",
+	function(DataService, HashService) {
 		var that = this;
 
 		that.characters = [];
@@ -15,7 +15,9 @@ angular.module("DestinyPlayerStats", ["DataService", "HashService"])
 		});
 
 		function getDataForUser() {
-			DataService.getDataForUser(that.userId);			
+			DataService.getDataForUser(that.userId).then(function(response) {
+				that.characters = response.data.Response.data.characters;
+			});			
 		}
 		
 		function getHashValue(value) {
