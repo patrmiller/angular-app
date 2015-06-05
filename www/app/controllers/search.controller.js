@@ -10,9 +10,8 @@ angular.module("DestinyPlayerStats", ["DataService", "HashService"])
 		that.getHashValue = getHashValue;
 		that.getDataForUser = getDataForUser;
 
-		var promise = DataService.getDataForUser(that.userId).then(function(response) {
-			that.characters = response.data.Response.data.characters;
-		});
+		//init
+		getDataForUser();
 
 		function getDataForUser() {
 			DataService.getDataForUser(that.userId).then(function(response) {

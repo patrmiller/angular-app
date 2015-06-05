@@ -6,6 +6,7 @@ angular.module("DataService", [])
 	var characters = [];
 	
 	that.getDataForUser = getDataForUser;
+	that.getInventoryItem = getInventoryItem;
 	that.characters = [];
 
 	function getDataForUser(userId) {
@@ -19,6 +20,11 @@ angular.module("DataService", [])
 		});
 		 
 	 	return playerPromise;
+	}
+
+	function getInventoryItem(hash) {
+		var url = "http://www.bungie.net/Platform/Destiny/Manifest/inventoryItem/";
+		return $http.get(url + hash);
 	}
 	
 	return that;

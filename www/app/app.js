@@ -1,4 +1,9 @@
-angular.module("app", ["ngRoute", "DestinyPlayerStats", "DestinyPlayerDetails"])
+angular.module("app", 
+	["ngRoute", 
+	 "DestinyPlayerStats", 
+	 "DestinyPlayerDetails", 
+	 "EmblemDirective",
+	 "MinutesToHours"])
 
 .config(function($routeProvider) {
 	$routeProvider.when('/search', {

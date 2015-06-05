@@ -21,9 +21,10 @@ button.search-button {
 }
 
 div.content-container {
+	margin-top: 20px;
 	background-color: rgba(0, 0, 0, 0.2);
 	width: 53%;
-	padding: 18px;
+	padding: 20px;
 	position: relative;
 	top: 6%;
 	border-radius: 5px;

@@ -12,6 +12,8 @@
 		</h3>
 	</div>	
 	<div class="content-container">
-		blah blah blah
+		<div>Date Last Played: {{ dc.character.characterBase.dateLastPlayed | date : fullDate }}</div>
+		<div>Time Played Last Session: {{ dc.character.characterBase.minutesPlayedThisSession | minutesToHours }}</div>
+		<div>Total Time Played: {{ dc.character.characterBase.minutesPlayedTotal | minutesToHours }}</div>
 	</div>
 </div>
