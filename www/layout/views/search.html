@@ -1,10 +1,13 @@
 <div class="content-container">
-	<emblem pc="pc" 
-		    character="character" 
-		    index="$index"
-		    ng-repeat="character in pc.characters"></emblem>
-	<div>
-		<input type="text" ng-model="pc.userId" class="search-box"/>
-		<button class="search-button" ng-click="pc.getDataForUser()">Find Your Guardians</button>
+	<div ng-show="pc.loaded">
+		<emblem pc="pc" 	
+			    character="character" 
+			    index="$index"
+			    ng-repeat="character in pc.characters"></emblem>
+		<div ng-cloak>
+			<input type="text" ng-model="pc.userId" class="search-box"/>
+			<button class="search-button" ng-click="pc.getDataForUser()">Find Your Guardians</button>
+		</div>
 	</div>
+	<loader loaded="pc.loaded"></loader>
 </div>

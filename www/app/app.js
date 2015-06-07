@@ -3,6 +3,7 @@ angular.module("app",
 	 "DestinyPlayerStats", 
 	 "DestinyPlayerDetails", 
 	 "EmblemDirective",
+	 "LoaderDirective",
 	 "MinutesToHours"])
 
 .config(function($routeProvider) {

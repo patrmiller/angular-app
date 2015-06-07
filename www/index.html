@@ -1,13 +1,12 @@
 <html ng-app="app">
 	<head>
-		<title>Destiny Player Search</title>	
-		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="layout/app.css">
+		<script src="lib/angular/angular.js"></script>
+		<title>Destiny Player Search</title>	
 	</head>
 	<body>
 		<div class="view-container" ng-view></div>
 
-		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular-route/angular-route.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/controllers/search.controller.js"></script>
@@ -15,6 +14,7 @@
 		<script src="app/services/data.service.js"></script>
 		<script src="app/services/hash.service.js"></script>
 		<script src="app/directives/emblem/emblem.directive.js"></script>
+		<script src="app/directives/loader/loader.directive.js"></script>
 		<script src="app/filters/minutesToHours.filter.js"></script>
 	</body>
 </html>

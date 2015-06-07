@@ -1,19 +1,22 @@
 <div class="detail-container">
-	<div class="detail">
-		<h1>{{ dc.userId }}</h1>	
-		<h3>
-			//
-			{{ dc.getHashValue(dc.character.characterBase.raceHash) }}
-			{{ dc.getHashValue(dc.character.characterBase.genderHash) }}
-			//
-			{{ dc.getHashValue(dc.character.characterBase.classHash) }}
-			//
-			level {{ dc.character.characterLevel }}
-		</h3>
-	</div>	
-	<div class="content-container">
-		<div>Date Last Played: {{ dc.character.characterBase.dateLastPlayed | date : fullDate }}</div>
-		<div>Time Played Last Session: {{ dc.character.characterBase.minutesPlayedThisSession | minutesToHours }}</div>
-		<div>Total Time Played: {{ dc.character.characterBase.minutesPlayedTotal | minutesToHours }}</div>
+	<div ng-show="dc.loaded">
+		<div class="detail">
+			<h1 ng-cloak>{{ dc.userId }}</h1>	
+			<h3>
+				//
+				{{ dc.getHashValue(dc.character.characterBase.raceHash) }}
+				{{ dc.getHashValue(dc.character.characterBase.genderHash) }}
+				//
+				{{ dc.getHashValue(dc.character.characterBase.classHash) }}
+				//
+				level {{ dc.character.characterLevel }}
+			</h3>
+		</div>	
+		<div class="content-container">
+			<div>Date Last Played: {{ dc.character.characterBase.dateLastPlayed | date : fullDate }}</div>
+			<div>Time Played Last Session: {{ dc.character.characterBase.minutesPlayedThisSession | minutesToHours }}</div>
+			<div>Total Time Played: {{ dc.character.characterBase.minutesPlayedTotal | minutesToHours }}</div>
+		</div>
 	</div>
+	<loader loaded="dc.loaded"></loader>
 </div>

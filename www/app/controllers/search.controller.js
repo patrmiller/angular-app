@@ -9,6 +9,7 @@ angular.module("DestinyPlayerStats", ["DataService", "HashService"])
 		that.getImageURL = getImageURL;
 		that.getHashValue = getHashValue;
 		that.getDataForUser = getDataForUser;
+		that.loaded = false;
 
 		//init
 		getDataForUser();
@@ -16,6 +17,7 @@ angular.module("DestinyPlayerStats", ["DataService", "HashService"])
 		function getDataForUser() {
 			DataService.getDataForUser(that.userId).then(function(response) {
 				that.characters = response.data.Response.data.characters;
+				that.loaded = true;
 			});			
 		}
 		

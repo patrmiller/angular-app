@@ -2,6 +2,7 @@ body {
 	background-color: #1E242B;
 	width: 1024px;
 	margin: 0 auto;
+	font-family: arial, helvetica, sans-serif;
 }
 
 div.view-container {
@@ -24,6 +25,7 @@ div.content-container {
 	margin-top: 20px;
 	background-color: rgba(0, 0, 0, 0.2);
 	width: 53%;
+	min-height: 260px;
 	padding: 20px;
 	position: relative;
 	top: 6%;
@@ -88,4 +90,11 @@ div.detail-container div.detail h3 {
 	width: 32%;
 	margin: 0;
 	padding: 0;
+}
+
+div.loader {
+	color: white;
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
 }
